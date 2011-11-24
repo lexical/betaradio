@@ -1,0 +1,6 @@
+# watch control file for uscan
+version=3
+opts=downloadurlmangle=s#.*(betaradio-(.*)\.tar\.bz2).*#http://betaradio.googlecode.com/files/$1#,\
+filenamemangle=s#.*(betaradio-(.*)\.tar\.bz2).*#$1# \
+http://code.google.com/p/betaradio/downloads/list \
+.*detail\?name=betaradio-(.*)\.tar\.bz2.*

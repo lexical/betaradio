@@ -1,0 +1,22 @@
+{
+	"title": "學術電台",
+	"url": "http://hdradionet.wordpress.com/channels/",
+	"property": "channel",
+	"channel": [
+		{
+			"title": "PTT Radio 網路電台",
+			"type": "mp3",
+			"url": "http://cast.ptt.cc:8000/yes"
+		},
+		{
+			"title": "Pinewave Radio - 中央大學松濤電台",
+			"type": "mp3",
+			"url": "http://broadcast.pinewave.tw:8000"
+		},
+		{
+			"title": "THBS - 清華大學校園電台",
+			"type": "mp3",
+			"url": "http://media.club.nthu.edu.tw:8000/thbs.mp3"
+		}
+	]
+}

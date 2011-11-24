@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>hiChannel</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                var show = function(item) {
+                    $('#result').append('  - title: ' + $(this).html() + '\n');
+                    $('#result').append('    id: ' + this.value + '\n');
+                }
+                $('#music').hide();
+                $('#life').hide();
+                $('#news').hide();
+                $('#others').hide();
+                $('#foreign').hide();
+                $('#culture').hide();
+                $('#result').append('title: hiChannel 廣播\n');
+                $('#result').append('url: http://hichannel.hinet.net/radio.html\n');
+                $('#result').append('category:\n');
+                $('#result').append('- title: 音樂\n');
+                $('#result').append('  channel:\n');
+                $('#music option').each(show);
+                $('#result').append('- title: 生活\n');
+                $('#result').append('  channel:\n');
+                $('#life option').each(show);
+                $('#result').append('- title: 新聞\n');
+                $('#result').append('  channel:\n');
+                $('#news option').each(show);
+                $('#result').append('- title: 綜合\n');
+                $('#result').append('  channel:\n');
+                $('#others option').each(show);
+                $('#result').append('- title: 外語\n');
+                $('#result').append('  channel:\n');
+                $('#foreign option').each(show);
+                $('#result').append('- title: 多元文化\n');
+                $('#result').append('  channel:\n');
+                $('#culture option').each(show);
+            });
+        </script>
+    </head>
+    <body>
+        <pre id="result"></pre>
+        <div id="music">
+            <select><option value="308">KISS RADIO 網路音樂台</option><option value="156">KISS RADIO 大眾廣播電台</option><option value="255">KISS RADIO 台南知音廣播</option><option value="256">KISS RADIO 大苗栗廣播</option><option value="258">KISS RADIO 南投廣播</option><option value="206">中廣音樂網i radio</option><option value="205">中廣流行網 i like</option><option value="222">HitFM聯播網 北部</option><option value="88">HitFM聯播網 中部</option><option value="90">HitFM聯播網 南部</option><option value="370">POP Radio 917台北流行音樂電台</option><option value="228">台北愛樂</option><option value="294">奇美古典音樂網</option><option value="212">BestRadio 台北好事989</option><option value="213">BestRadio 高雄港都983</option><option value="211">BestRadio 台中好事903</option><option value="303">BestRadio 花蓮好事935</option><option value="248">Apple line 蘋果線上</option><option value="321">ASIAFM衛星音樂台</option><option value="357">Flyradio飛揚調頻895</option><option value="313">RTI央廣-音樂</option><option value="340">佳音現代聖樂網</option><option value="338">全國廣播音樂網</option><option value="289">太陽電台</option></select>
+        </div>
+        <div id="life">
+            <select><option value="232">飛碟電台</option><option value="210">ASIA FM92.7亞州電台</option><option value="295">ASIA FM92.3亞太電台</option><option value="148">IC之音</option><option value="282">環宇電台</option><option value="202">全國廣播</option><option value="201">佳音電台</option><option value="250">佳音經典音樂網</option><option value="325">大愛網路電台</option><option value="356">青春線上</option><option value="229">GOLD FM-台北健康電台</option><option value="226">GOLD FM-台中城市廣播</option><option value="238">台北廣播電台喔海洋頻道</option><option value="208">台北廣播電台- 都會資訊頻道</option><option value="109">大千電台</option><option value="301">宜蘭中山電台</option><option value="217">真心之音廣播電台</option></select>
+        </div>
+        <div id="news">
+            <select><option value="207">中廣新聞網</option><option value="187">NEWS98新聞網</option></select>
+        </div>
+        <div id="others">
+            <select><option value="1020">正義電台</option><option value="198">正聲台北調頻台</option><option value="317">正聲台北調幅台</option><option value="216">漢聲廣播電台全國調頻網</option><option value="215">漢聲廣播電台</option><option value="309">漢聲光華網-短波</option><option value="281">漢聲光華網-中波</option><option value="315">RTI央廣-國語</option><option value="327">綠色和平台灣文化廣播電台</option></select>
+        </div>
+        <div id="foreign">
+            <select><option value="177">ICRT</option><option value="314">RTI央廣-歐美及方言</option><option value="312">RTI央廣-FM 中央廣播電台</option><option value="311">RTI央廣-亞洲頻道</option></select>
+        </div>
+        <div id="culture">
+            <select><option value="259">寶島新聲廣播電台</option><option value="1040">非凡音電台</option><option value="160">中廣客家頻道</option><option value="300">大漢之音</option><option value="241">寶島客家廣播電台</option><option value="254">新客家廣播電台</option><option value="298">高屏溪客家廣播電台</option><option value="162">中廣寶島網</option></select>
+        </div>
+    </body>
+</html>

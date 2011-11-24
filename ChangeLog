@@ -1,0 +1,543 @@
+2011-11-18  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* configure.ac,
+	po/zh_TW.po,
+	src/betaradio.vala,
+	src/json_soup.vala: Add thread support to improve quick feedback.
+	* po/zh_TW.po,
+	src/betaradio.vala: Prompt to restart program.
+
+2011-07-25  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* debian/changelog: Add more information about the changes of debian/control.
+
+2011-07-22  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* configure.ac: Add libtool to avoid some compilation error.
+	* debian/control: Update Debian policy version.
+	* configure.ac: Bump to 1.3
+	* debian/control: Avoid lintian warning.
+	* debian/changelog: New upstream release.
+	* mkdeb.sh: Update utilities script.
+	* debian/changelog: Fix a little typo.
+
+2011-07-05  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/json_soup.vala: Avoid unneeded reference counting.
+
+2011-07-04  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/betaradio.vala,
+	src/gst_player.vala: Improve the stability when switching to different
+	radio site.
+	* configure.ac: Enable memory profile and update Vala to 0.12.
+
+2011-04-11  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* configure.ac: Enable silent-rules of automake.
+
+2011-03-20  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* debian/watch: Fix debian/watch.
+	* man/betaradio.1: Polish manpage.
+
+2011-03-15  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* debian/control: Remove unneeded dependency.
+	* man/betaradio.1: Polish man page.
+
+2011-03-12  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* debian/README,
+	debian/changelog,
+	debian/compat,
+	debian/control,
+	debian/copyright,
+	debian/rules,
+	debian/watch: Polish for Debian package.
+	* debian/rules: Fix a syntax error.
+	* debian/control,
+	debian/copyright: Fix some lintian warning and error.
+	* data/betaradio.desktop.in: Remove deprecated tag.
+
+2011-02-18  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* utils/academic.json: Remove "PTT Radio - OnlyMayDay".
+
+2011-01-04  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/betaradio.vala: Set default icon.
+	* po/zh_TW.po,
+	src/betaradio.vala: Set tooltip text.
+	* data/betaradio.desktop.in,
+	man/betaradio.1: Adjust comment and description.
+	* debian/README,
+	debian/changelog,
+	debian/control,
+	debian/rules,
+	debian/source/format,
+	mkdeb.sh: Polish for Debian package.
+	* debian/control,
+	debian/source/format: Fix lintian warning and error.
+	* mkdeb.sh: Polish script.
+	* po/zh_TW.po: Update po.
+
+2011-01-03  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/betaradio.c,
+	src/gstplay.c,
+	src/gstplay.h,
+	src/json_cat.c,
+	src/json_cat.h: Remove deprecated source codes.
+	* Makefile.am,
+	autogen.sh,
+	configure.ac,
+	po/POTFILES.in,
+	po/zh_TW.po,
+	src/Makefile.am,
+	src/betaradio.vala,
+	vapi/Makefile.am,
+	vapi/config.vapi: Deploy Vala program and gettextize.
+	* src/betaradio.c: Remove unneeded source codes.
+	* src/betaradio.vala,
+	src/json_soup.vala: Follow function naming rule of Vala.
+
+2010-12-29  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/json_soup.vala: Reimplement JsonSoup component by Vala.
+	* src/gst_player.vala: Reimplement GstPlayer component by Vala.
+	* src/betaradio.vala: Reimplement BetaRadio component by Vala.
+	* src/gst_player.vala: Reduce unneeded inheritance.
+	* src/json_soup.vala: Fix array indexing bug.
+
+
+2010-12-06  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* utils/academic.json: Add THBS.
+	* utils/academic.json: Add OnlyMayDay.
+
+2010-11-19  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* utils/academic.json,
+	utils/list.json,
+	utils/ptt.json: Add Pinewave Radio.
+
+2010-10-08  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* Makefile.am,
+	debian/changelog: 'debian' folder should not be included in release
+	tarball but can be maintained under VCS.
+	* debian/README,
+	debian/changelog,
+	debian/control,
+	debian/copyright,
+	debian/source/format,
+	man/betaradio.1: Adjust for official Debian package application.
+	* mkdeb.sh: Create a script to generate Debian package.
+	* configure.ac,
+	debian/changelog: Bump to v1.1.1 release.
+	* mkdeb.sh: Use hard link instead of dullicate copy.
+
+2010-10-03  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* autogen.sh,
+	configure.ac,
+	src/Makefile.am,
+	src/betaradio.c: Polish gettext usage.
+	* TODO,
+	configure.ac,
+	debian/changelog,
+	po/zh_TW.po: Bump to v1.1 release.
+
+2010-09-27  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* autogen.sh: Install copies instead of symbolic links to avoid pbuilder
+	failed.
+
+2010-08-31  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* po/zh_TW.po: Update po file.
+	* src/betaradio.c: Replace url by some condition.
+	* src/gstplay.c: Use playbin2.
+	* Makefile.am,
+	autogen.sh,
+	configure.ac,
+	debian/README,
+	debian/README.source,
+	debian/changelog,
+	debian/compat,
+	debian/control,
+	debian/copyright,
+	debian/patches/series,
+	debian/rules,
+	debian/source/format,
+	man/Makefile.am,
+	man/betaradio.1: Debianized.
+	* configure.ac,
+	debian/control,
+	debian/copyright,
+	debian/rules,
+	src/Makefile.am,
+	src/json_cat.c,
+	src/json_cat.h: Import json-cat as built-in function.
+	* Makefile.am: Distributed with debian folder.
+	* autogen.sh: Add ./configure
+	* po/zh_TW.po: Update po file.
+
+2010-06-30  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/betaradio.c: Add more debug options from gst.
+
+2010-06-29  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/gstplay.c: Adjust blocksize for mms.
+
+2010-06-28  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* utils/hichannel.json,
+	utils/list.json,
+	utils/ptt.json: Prepare for new mechanism.
+	* utils/list.json: Fix wrong json format.
+	* utils/ptt.json: Fix wrong json format.
+	* utils/ptt.json: Fix wrong json format.
+	* utils/hichannel.json,
+	utils/ptt.json: Add property.
+	* po/zh_TW.po,
+	src/betaradio.c,
+	src/gstplay.c,
+	src/gstplay.h: Add mp3 streaming support and allow different sources.
+	* po/zh_TW.po,
+	utils/ptt.json: Rename pttradio's title.
+	* src/gstplay.c: Enlarge blocksize to 320KBytes.
+
+2010-06-26  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/Makefile.am: Not to install header files.
+	* src/betaradio.c: Not to blink icon.
+	* src/betaradio.c, 
+	web/hichannel.json -> utils/hichannel.json: Change source.
+	* web/jquery.cookie.js,
+	web/jquery.timers.js,
+	web/player.css,
+	web/player.html,
+	web/player.ico,
+	web/player.js: Remove unneeded files.
+	* po/zh_TW.po: Update language translation.
+	* src/betaradio.c: Check icon before use.
+	* configure.ac: Update GTK+ requirement.
+	* autogen.sh,
+	po/zh_TW.po,
+	src/betaradio.c: Polish.
+	* data/betaradio.desktop.in: Update language translation.
+
+2010-06-25  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* data/radio-off.png,
+	data/radio-on.png,
+	src/channel.c,
+	src/channel.h,
+	src/eggtrayicon.c,
+	src/eggtrayicon.h,
+	src/radiosite.c,
+	src/radiosite.h,
+	src/sitelist.h: Remove unneeded files.
+	* data/betaradio.png: Change new icon.
+	* configure.ac,
+	data/Makefile.am,
+	src/Makefile.am: Update autotools config.
+	* po/POTFILES.in,
+	po/zh_TW.po: Update language translation.
+	* src/betaradio.c,
+	src/gstplay.c,
+	src/streamplayer.h -> src/gstplay.h: Apply to new architechure design.
+
+2010-06-06  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* web/player.html,
+	web/player.ico,
+	web/Icon.png: Update site icon.
+	* web/player.html,
+	web/hichannel.json: Update to jQuery 1.4.2
+
+2010-01-17  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* web/radio-128.png,
+	web/radio-19.png,
+	web/radio-32.png,
+	web/radio-48.png,
+	web/Icon.png: Keep one 128x128 icon.
+	* web/player.css,
+	web/player.html,
+	web/player.js: Adjust UI.
+	* utils/hichannel.html,
+	utils/hichannel.py,
+	utils/hichannel.yaml,
+	web/hichannel.json: Update list.
+	* web/player.html: Add site icon.
+
+2010-01-13  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* utils/jquery.cookie.js,
+	utils/player.html,
+	utils/player.js: Remember last channel.
+	* web/hichannel.json,
+	web/jquery.cookie.js,
+	web/jquery.timers.js,
+	web/player.css,
+	web/player.html,
+	web/player.js,
+	web/radio-128.png,
+	web/radio-19.png,
+	web/radio-32.png,
+	web/radio-48.png: Move to folder 'web'.
+	* web/player.js: Improve Safari.
+	* web/player.js: Improve Safari on Mac only.
+
+2010-01-11  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* utils/radio-32.png,
+	utils/radio-19.png,
+	utils/radio-128.png,
+	utils/radio-48.png: Add icons with Public Domain license from
+	http://openclipart.org/media/files/neoguiri/8233
+
+2010-01-10  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* utils/jquery.timers.js,
+	utils/player.html,
+	utils/player.js: Add alarm support.
+	* utils/player.js: Fix the bug of alarm.
+	* utils/player.js: Fix the compatible problem with IE8.
+
+2010-01-08  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* utils/player.css,
+	utils/player.html,
+	utils/player.js: Adjust UI.
+
+2010-01-07  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* utils/player.js: Add autostart.
+
+2010-01-06  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* utils/player.js: Fix the compatible problem with IE8.
+	* utils/player.js: Refactor for max compatibility.
+	* utils/player.html: Adjust UI.
+	* utils/player.css,
+	utils/player.html,
+	utils/player.js: Adjust UI.
+	* utils/player.css,
+	utils/player.html,
+	utils/player.js: Adjust UI.
+	* utils/player.css,
+	utils/player.js: Adjust UI.
+	* utils/player.js: Change the behavior of control.
+
+2010-01-05  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* utils/player.html,
+	utils/player.js: Use unobtrusive JavaScript.
+	* utils/player.js: Refactor.
+	* utils/player.html,
+	utils/player.js: Refactor.
+	* utils/hichannel.json,
+	utils/hichannel.yaml,
+	utils/player.js: Refactor and remove bad url.
+
+2010-01-04  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* utils/hichannel.html,
+	utils/hichannel.json,
+	utils/hichannel.py: Add new mechanism about JSON.
+	* utils/hichannel.html,
+	utils/hichannel.json,
+	utils/hichannel.py,
+	utils/hichannel.yaml,
+	utils/player.html: Add audio player of HTML5 and adjust data format.
+
+2010-01-03  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/Makefile.am,
+	src/betaradio.c,
+	src/gstplay.c,
+	src/streamplayer.h: Refactor for abstract stream player.
+	* autogen.sh,
+	po/POTFILES.in,
+	po/zh_TW.po: Fix compilation error and update po file.
+	* utils/hichannel.html,
+	utils/hichannel.py,
+	utils/hichannel.yaml: Add new mechanism about YAML.
+	* src/radiosite.h: Create the prototype for RadioSite.
+	* utils/hichannel.yaml: Replace 'mms' with 'http'.
+	* COPYING,
+	src/betaradio.c,
+	src/channel.c,
+	src/channel.h,
+	src/gstplay.c,
+	src/radiosite.c,
+	src/radiosite.h,
+	src/sitelist.h,
+	src/streamplayer.h: Change license from GPLv2 to GPLv3.
+
+2009-04-14  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* configure.ac,
+	po/zh_TW.po,
+	src/betaradio.c,
+	src/channel.c,
+	src/channel.h,
+	src/sitelist.h: Update radio list and remove TV.
+
+2009-04-11  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/channel.c: Fetch mms url if fetching http url failed.
+
+2009-01-26  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* Makefile.am,
+	autogen.sh,
+	configure.ac,
+	m4/Makefile.am,
+	po/Makevars,
+	po/zh_TW.po,
+	src/Makefile.am,
+	src/betaradio.c: The roughly working gettext support.
+	* autogen.sh,
+	configure.ac,
+	po/zh_TW.po: Polish to pass through `make distcheck`.
+
+2009-01-25  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* TODO: Update todo list.
+	* configure.ac,
+	m4/Makefile.am,
+	po/LINGUAS,
+	po/Makevars,
+	po/POTFILES.in: Try to add i18n support.
+	* Makefile.am: Add the missing SUBDIRS.
+	* po/zh_TW.po: Add zh_TW translation file.
+	* Makefile.am: Add the missing include header gettext.h from
+	/usr/share/gettext/gettext.
+	* src/Makefile.am,
+	src/betaradio.c: Add the necessary work for gettext.
+	* autogen.sh: Polish autogen.sh for gettext.
+	* po/zh_TW.po,
+	src/betaradio.c: Internationalize betaradio.c
+
+2008-11-28  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/gstplay.c,
+	src/betaradio.c: Polish icon flash timing.
+	* src/gstplay.c,
+	src/gstplay.h.
+	src/betaradio.c: Improve the mechanism of callback function.
+	* configure.ac,
+	src/betaradio.c: Add an option to enable tv (disable by default).
+
+2008-11-27  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/gstplay.c,
+	src/gstplay.h,
+	src/betaradio.c: Add GstPlayer for GStreamer.
+
+2008-11-18  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* autogen.sh: Update autogen.sh and add libtool initialize.
+
+2008-10-20  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/sitelist.h: update the source url.
+	* src/sitelist.h: update the source url.
+
+2008-09-01  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/channel.c: update the source url.
+
+2008-07-06  Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/channel.c: Update the source url.
+
+2008-05-01	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* src/sitelist.h: Update radio site list.
+
+2008-04-14	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+
+	* TODO,
+	autogen.sh: Add a TODO item.
+
+2008-02-11	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* data/Makefile.am: Fix the bug lack of radio-on.png and radio-off.png at
+	tags 0.1.2
+
+2008-02-08	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* configure.ac: Bump to 0.1.2
+
+2008-02-08	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* src/betaradio.c: Adjust the source code of GTK+.
+
+2008-01-21	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* TODO: Add this to record some ideas.
+	
+2008-01-21	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* autogen.sh: Add this for its convenience.
+
+2008-01-14	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* src/betaradio.c: Add the missing trailer 'NULL' of g_build_filename.
+
+2008-01-14	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* src/Makefile.am
+	src/betaradio.c
+	data/betaradio.desktop.in
+	data/betaradio-on.png
+	data/Makefile.am
+	data/radio-off.png
+	data/radio-on.png: Modify the tray icon's size and location on disk.
+
+2008-01-14	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* configure.ac,
+	data/Makefile.am,
+	src/betaradio.c: Add new tray icon and make it flash when working.
+
+2007-12-10	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* src/sitelist.h: Modify site name.
+	* data/betaradio-on.png,
+	data/betaradio.png: Update new icons.
+
+2007-11-28	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* src/sitelist.h: Update site list.
+
+2007-11-15	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* src/channel.c: Add error check to prevent program's crash.
+
+2007-11-11	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* src/gstplay.c,
+	src/channel.c,
+	src/betaradio.c: Add error check, and polish source code.
+
+2007-11-08	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* src/sitelist.h,
+	src/channel.c,
+	src/betaradio.c,
+	src/channel.h: Add live channel.
+
+2007-11-06	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* src/channel.c: Change the url of stream source, and release 0.1.1
+
+2007-07-07	Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+	* configure.ac,
+	src/eggtrayicon.h,
+	src/gstplay.c,
+	src/sitelist.h,
+	src/channel.c,
+	src/gstplay.h,
+	src/Makefile.am,
+	src/betaradio.c,
+	src/eggtrayicon.c,
+	src/channel.h,
+	COPYING,
+	data/betaradio.desktop.in,
+	data/Makefile.am,
+	data/betaradio.png,
+	Makefile.am: betaradio v0.1.0 released
