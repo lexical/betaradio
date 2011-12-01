@@ -22,6 +22,33 @@ GETTEXT_PACKAGE="$PACKAGE_NAME"
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [Gettext Package])
 AC_SUBST(GETTEXT_PACKAGE)
 
+APPINDICATOR_REQUIRED=0.0.7
+
+AC_ARG_ENABLE(appindicator,
+                        AS_HELP_STRING([--enable-appindicator[=@<:@no/auto/yes@:>@]],[Build support for application indicators ]),
+                        [enable_appindicator=$enableval],
+                        [enable_appindicator="auto"])
+
+if test x$enable_appindicator = xauto ; then
+        PKG_CHECK_EXISTS([appindicator-0.1 >= $APPINDICATOR_REQUIRED],
+                         enable_appindicator="yes",
+                         enable_appindicator="no")
+fi
+
+if test x$enable_appindicator = xyes ; then
+        PKG_CHECK_EXISTS([appindicator-0.1 >= $APPINDICATOR_REQUIRED],,
+                         AC_MSG_ERROR([appindicator-0.1 is not installed]))
+        PKG_CHECK_MODULES(APP_INDICATOR,
+                        appindicator-0.1 >= $APPINDICATOR_REQUIRED)
+        AC_SUBST(APP_INDICATOR_CFLAGS)
+        AC_SUBST(APP_INDICATOR_LIBS)
+        AC_DEFINE(HAVE_APP_INDICATOR, 1, [Have AppIndicator])
+        VALA_CFLAGS="$VALA_CFLAGS $APP_INDICATOR_CFLAGS"
+        VALA_LIBS="$VALA_LIBS $APP_INDICATOR_LIBS"
+        VALA_FLAGS="$VALA_FLAGS --pkg appindicator3-0.1"
+fi
+AM_CONDITIONAL(HAVE_APP_INDICATOR, test x"$enable_appindicator" = xyes)
+
 PKG_CHECK_MODULES([GTK], [gtk+-2.0 >= 2.10], [
                    VALA_CFLAGS="$VALA_CFLAGS $GTK_CFLAGS"
                    VALA_LIBS="$VALA_LIBS $GTK_LIBS"
@@ -38,7 +65,8 @@ PKG_CHECK_MODULES([SOUP], [libsoup-2.4], [
                    VALA_CFLAGS="$VALA_CFLAGS $SOUP_CFLAGS"
                    VALA_LIBS="$VALA_LIBS $SOUP_LIBS"
                    ], AC_MSG_ERROR([libsoup-2.4 not found]))
-VALA_FLAGS="--enable-mem-profiler --thread --pkg libsoup-2.4 --pkg json-glib-1.0 --pkg gstreamer-0.10 --pkg gtk+-2.0"
+
+VALA_FLAGS="$VALA_FLAGS --enable-mem-profiler --thread --pkg libsoup-2.4 --pkg json-glib-1.0 --pkg gstreamer-0.10 --pkg gtk+-2.0"
 
 AC_SUBST(VALA_CFLAGS)
 AC_SUBST(VALA_FLAGS)

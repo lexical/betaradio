@@ -2,6 +2,7 @@
 /* vim:set fileencodings=utf-8 tabstop=4 expandtab shiftwidth=4 softtabstop=4: */
 /**
  * Copyright (C) 2010 Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+ * Copyright (C) 2011 Keng-Yu Lin <kengyu@lexical.tw>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,9 +20,11 @@
 
 using Gtk;
 using Gst;
+using AppIndicator;
 
 class BetaRadio : GLib.Object {
-    private Gtk.StatusIcon icon = null;
+
+    private AppIndicator.Indicator icon = null;
     private Gtk.Menu menu = null;
 
     public static void main (string[] args) {
@@ -37,14 +40,10 @@ class BetaRadio : GLib.Object {
     }
 
     public BetaRadio () {
-        if (FileUtils.test(Config.DATADIR + "/pixmaps/betaradio/betaradio.png", FileTest.IS_REGULAR) == true) {
-            icon = new Gtk.StatusIcon.from_file(Config.DATADIR + "/pixmaps/betaradio/betaradio.png");
-        } else if (FileUtils.test("data/betaradio.png", FileTest.IS_REGULAR) == true) {
-            icon = new Gtk.StatusIcon.from_file("data/betaradio.png");
-        } else {
-            icon = new Gtk.StatusIcon.from_stock(Gtk.Stock.MISSING_IMAGE);
-        }
-        icon.set_tooltip_text(_("Data Synchronizing ..."));
+
+        icon = new Indicator("betaradio", "sound-icon", IndicatorCategory.APPLICATION_STATUS);
+        icon.set_status(IndicatorStatus.ACTIVE);
+        icon.set_attention_icon("sound-icon");
 
         try {
             Thread.create<void*> ( () => {
@@ -54,13 +53,13 @@ class BetaRadio : GLib.Object {
                 var stop = new Gtk.RadioMenuItem.with_label(group, _("Stop"));
                 group = stop.get_group();
                 menu.append(stop);
+
                 stop.toggled.connect((e) => {
                     if (e.get_active() == true) {
                         GstPlayer.get_instance().stop();
-                        icon.set_tooltip_text(_("BetaRadio Tuner"));
+                        icon.set_status(IndicatorStatus.ATTENTION);
                     }
                 });
-
                 menu.append(new Gtk.SeparatorMenuItem());
 
                 group = getMenu(menu, group);
@@ -70,22 +69,17 @@ class BetaRadio : GLib.Object {
                 var quit = new Gtk.RadioMenuItem.with_label(group, _("Quit"));
                 group = quit.get_group();
                 menu.append(quit);
+
                 quit.toggled.connect((e) => {
                     if (e.get_active() == true) {
                         GstPlayer.get_instance().stop();
-                        icon.set_tooltip_text(_("BetaRadio Tuner"));
+                        icon.set_status(IndicatorStatus.ATTENTION);
                         Gtk.main_quit();
                     }
                 });
 
                 menu.show_all();
-
-                icon.button_release_event.connect((e) => {
-                    menu.popup(null, null, null, e.button, e.time);
-                    return true;
-                });
-
-                icon.set_tooltip_text(_("BetaRadio Tuner"));
+		icon.set_menu(menu);
 
                 return null;
             }, true);
@@ -93,6 +87,7 @@ class BetaRadio : GLib.Object {
             debug("%s", e.message);
         }
     }
+
 
     private unowned SList<Gtk.RadioMenuItem> getMenu(Gtk.Menu menu, SList<Gtk.RadioMenuItem> group) {
         var list = new JsonSoup.http("http://betaradio.googlecode.com/svn/trunk/utils/list.json");
@@ -143,7 +138,6 @@ class BetaRadio : GLib.Object {
                 radio.toggled.connect( (e) => {
                     if (e.get_active() == true) {
                         GstPlayer.get_instance().play(url);
-                        icon.set_tooltip_text(title);
                     }
                 });
                 json.grandparent();
@@ -165,7 +159,6 @@ class BetaRadio : GLib.Object {
             radio.toggled.connect( (e) => {
                 if (e.get_active() == true) {
                     GstPlayer.get_instance().play(url);
-                    icon.set_tooltip_text(title);
                 }
             });
             json.grandparent();
