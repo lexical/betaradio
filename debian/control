@@ -3,16 +3,15 @@ Section: x11
 Priority: optional
 Maintainer: Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
 Build-Depends: debhelper (>= 8), autotools-dev, libgtk2.0-dev (>= 2.10),
-    libgstreamer0.10-dev, libjson-glib-dev, libsoup2.4-dev
+    libgstreamer0.10-dev, libjson-glib-dev, libsoup2.4-dev, libappindicator3-dev
 Standards-Version: 3.9.2
-Vcs-Svn: http://betaradio.googlecode.com/svn/trunk/
-Vcs-Browser: http://code.google.com/p/betaradio/source/browse/
 Homepage: http://code.google.com/p/betaradio/
 
-Package: betaradio
+Package: indicator-betaradio
 Architecture: any
+Conflicts: betaradio
 Depends: ${shlibs:Depends}, ${misc:Depends}, gstreamer0.10-plugins-bad,
-    gstreamer0.10-plugins-ugly, gstreamer0.10-ffmpeg
+    gstreamer0.10-plugins-ugly, gstreamer0.10-ffmpeg, libappindicator3-1
 Description: Internet radio of Taiwan
  With this client you can listen to internet radio of Taiwan without opening a
  browser. It displays a icon on system tray that you can click and select the
