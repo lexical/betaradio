@@ -1,5 +1,5 @@
 AC_PREREQ(2.65)
-AC_INIT([betaradio],[1.3],[http://code.google.com/p/betaradio])
+AC_INIT([betaradio],[1.4],[http://code.google.com/p/betaradio])
 AM_MAINTAINER_MODE([enable])
 AC_CONFIG_SRCDIR([src/betaradio.vala])
 AC_CONFIG_AUX_DIR([build-aux])

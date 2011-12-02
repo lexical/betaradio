@@ -1,4 +1,4 @@
-betaradio (1.4~indicator1) oneiric; urgency=low
+betaradio (1.4-1~indicator1) oneiric; urgency=low
 
   * Add libindicator support 
 
